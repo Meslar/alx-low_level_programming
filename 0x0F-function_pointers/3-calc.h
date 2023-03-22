@@ -1,22 +1,40 @@
-#ifndef _HEADER_
-#define _HEADER_
+#include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * struct op - Struct op
- *
- * @op: The operator
- * @f: The function associated
- */
-typedef struct op
-{
-	char *op;
-	int (*f)(int a, int b);
-} op_t;
+* main - Prints calculator result
+*
+* @argc: int of commandline args
+*
+* @argv: 2-d array of commandline args
+*
+* Return: 0 success, 98 for argc error, 100 if div 0
+*/
 
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_div(int a, int b);
-int op_mod(int a, int b);
-int (*get_op_func(char *s))(int, int);
-#endif
+int main(int argc, char **argv)
+{
+	int (*operator_function)(int, int), num1, num2;
+
+	if (argc != 4)
+		printf("Error\n"), exit(98);
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	operator_function = get_op_func(argv[2]);
+	if (!operator_function)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if (!num2 && (argv[2][0] == '/' || argv[2][0] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", operator_function(num1, num2));
+	return (0);
+}
