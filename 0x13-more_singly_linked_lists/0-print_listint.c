@@ -3,14 +3,14 @@
 #include <stddef.h>
 
 /**
- * print_listint - prints a singly linked list
- * @h: pointer to head of singly linked list
+ * print_listint - prints a list
+ * @h: pointer to singly linked list
  *
- * Return: Number of elements in list
+ * Return: Number of integers in list
  */
 size_t print_listint(const listint_t *h)
 {
-    size_t count = 0;
+    unsigned int count = 0;
 
     while (h != NULL)
     {
