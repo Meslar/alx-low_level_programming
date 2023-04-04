@@ -1,6 +1,7 @@
 #include "lists.h"
 
 /**
+ * * pop_listint - Deletes the head node of a listint_t linked list
  * free_listint2 - Frees a listint_t list and sets the head to NULL
  * @head: Pointer to the head of the list
  *
