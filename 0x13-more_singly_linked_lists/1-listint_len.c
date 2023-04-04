@@ -2,20 +2,20 @@
 #include <stddef.h>
 
 /**
- * listint_len 
+ * listint_len
  * @h: pointer to singly linked list
  *
  * Return: Integer element
  */
-size_t listint_len(const listint_t *h)
+size_t listint_len(const listint *h)
 {
-    unsigned int count = 0;
+	size_t count = 0;
 
-    while (h != NULL)
-    {
-        h = h->next;
-        count++;
-    }
+	while (h != NULL)
+	{
+		h = h->next;
+		count++;
+	}
 
-    return (count);
+	return (count)
 }
