@@ -4,7 +4,7 @@
  * free_listint2 - Frees a listint_t list and sets the head to NULL
  * @head: Pointer to the head of the list
  *
- * This function frees all the nodes in a listint_t linked list and sets the head to NULL.
+ * Return: The head node's data (n)
  */
 
 int pop_listint(listint_t **head)
