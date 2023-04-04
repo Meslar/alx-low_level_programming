@@ -3,9 +3,9 @@
 
 /**
  * listint_len 
- * @h: pointer to head of singly linked list
+ * @h: pointer to singly linked list
  *
- * Return integer
+ * Return: Integer element
  */
 size_t listint_len(const listint_t *h)
 {
