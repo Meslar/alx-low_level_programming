@@ -16,21 +16,17 @@ unsigned int binary_to_uint(const char *b)
 	{
 		return (0);
 	}
-	while (*b)
+	for (; *b != '\0'; b++)
 	{
-		if (*b == 0)
+		if (*b == '0' || *b == '1')
 		{
-			i <<= 1;
-		}
-		else if (*b == 1)
-		{
-			i <<= 1 | 1;
+			i = i * 2 + (*b - '0');
 		}
 		else
 		{
 			return (0);
 		}
-		b++;
 	}
+
 	return (i);
 }
